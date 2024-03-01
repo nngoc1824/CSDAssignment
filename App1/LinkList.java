@@ -110,7 +110,19 @@ public class LinkList {
         }
     }
 
-    public void addAfterPosition() {
+    public void addAfterPosition(int k) {
+        TaxPayer taxPayer = input.getTaxPayer();
+        Node newNode = new Node(taxPayer);
+        Node currNode = head;
+        for (int i = 1; i < k; i++) {
+            if (currNode == null) {
+                System.out.println("Position not found");
+                return;
+            }
+            currNode = currNode.next;
+        }
+        newNode.next = currNode.next;
+        currNode.next = newNode;
     }
 
     public void deleteAt() {
