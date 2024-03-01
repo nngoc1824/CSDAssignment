@@ -125,7 +125,22 @@ public class LinkList {
         currNode.next = newNode;
     }
 
-    public void deleteAt() {
+    public void deleteAt(int k) {
+        Node currNode = head;
+        Node prevNode = null;
+        for (int i = 1; i < k; i++) {
+            if (currNode == null) {
+                System.out.println("Position not found");
+                return;
+            }
+            prevNode = currNode;
+            currNode = currNode.next;
+        }
+        if (prevNode == null) {
+            head = currNode.next;
+        } else {
+            prevNode.next = currNode.next;
+        }
     }
 
     public void addToEnd(TaxPayer taxPayer) {
