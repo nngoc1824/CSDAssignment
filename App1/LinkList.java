@@ -68,6 +68,7 @@ public class LinkList {
 
     public Node searchByCode(String code) {
         Node currNode = head;
+        //
         while (currNode != null) {
             if (currNode.taxPayer.getCode().equals(code)) {
                 return currNode;
